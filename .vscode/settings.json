@@ -1,0 +1,7 @@
+{
+  "vetur.validation.template": false,
+  "eslint.workingDirectories": [
+    "./s3static"
+  ],
+  "eslint.validate": ["vue", "javascript", "html"]
+}
