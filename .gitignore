@@ -106,5 +106,8 @@ dist
 # ipynb cache
 .ipynb_checkpoints
 
-# Original File
+# Original Data File
 rawdata
+
+# Ignore local action directory
+act
