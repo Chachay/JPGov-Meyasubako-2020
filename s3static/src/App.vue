@@ -24,9 +24,9 @@
         <b-card-group deck>
           <b-card title="更新情報">
             <b-card-sub-title class="mb-2">政府情報更新日</b-card-sub-title>
-            <b-card-text class="mx-3">2020/12/18</b-card-text>
+            <b-card-text class="mx-3">2021/01/18</b-card-text>
             <b-card-sub-title class="mb-2">サイト情報更新日</b-card-sub-title>
-            <b-card-text class="mx-3">2020/12/21</b-card-text>
+            <b-card-text class="mx-3">2021/01/18</b-card-text>
 
             <b-card-sub-title class="mb-2">目安箱投稿数</b-card-sub-title>
             <b-card-text class="mx-3">&gt;8000</b-card-text>
@@ -91,6 +91,7 @@
               id="filterInput"
               v-model="filter"
               type="search"
+              debounce="100"
               placeholder="Type to Search"
             ></b-form-input>
             <b-input-group-append>
@@ -142,18 +143,18 @@
         >
       </template>
       <template #row-details="row">
-        <b-card-group v-if="list_index.includes(row.item['ID'])" deck>
+        <b-card-group v-if="list_index.includes(row.item['UID'])" deck>
           <b-card title="提案内容">
             <b-card-sub-title class="mb-2">詳細</b-card-sub-title>
             <b-card-text
               class="ml-2"
-              v-html="arrObjDetailed[row.item['ID']]['提案の具体的内容']"
+              v-html="arrObjDetailed[row.item['UID']]['提案の具体的内容']"
             ></b-card-text>
 
             <b-card-sub-title class="mb-2">理由</b-card-sub-title>
             <b-card-text
               class="ml-2"
-              v-html="arrObjDetailed[row.item['ID']]['提案理由']"
+              v-html="arrObjDetailed[row.item['UID']]['提案理由']"
             ></b-card-text>
           </b-card>
           <b-card title="回答">
@@ -161,7 +162,7 @@
             <b-card-text
               class="ml-2"
               v-html="
-                arrObjDetailed[row.item['ID']]['所管省庁の検討結果_制度の現状']
+                arrObjDetailed[row.item['UID']]['所管省庁の検討結果_制度の現状']
               "
             ></b-card-text>
 
@@ -169,7 +170,7 @@
             <b-card-text
               class="ml-2"
               v-html="
-                arrObjDetailed[row.item['ID']]['所管省庁の検討結果_対応の概要']
+                arrObjDetailed[row.item['UID']]['所管省庁の検討結果_対応の概要']
               "
             ></b-card-text>
 
@@ -177,7 +178,7 @@
             <b-card-text
               class="ml-2"
               v-html="
-                arrObjDetailed[row.item['ID']]['所管省庁の検討結果_該当法令等']
+                arrObjDetailed[row.item['UID']]['所管省庁の検討結果_該当法令等']
               "
             ></b-card-text>
           </b-card>
@@ -222,15 +223,16 @@
 <script>
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
-import rawdata from '@/assets/data20201224.json'
+import rawdata from '@/assets/data20210118.json'
 
 export default {
   name: 'App',
   components: {},
   data() {
     return {
+      JSON_PATH: 'data/data20210118.json',
       arrObj: rawdata,
-      arrObjDetailed: [],
+      arrObjDetailed: {},
 
       tableFields: [
         { key: '通番', label: '番号', sortable: true, width: '2em' },
@@ -403,7 +405,7 @@ export default {
     this.chart01.legend.markers.fillColors = this.chart01.fill.colors
     this.chart02.legend.markers.fillColors = this.chart02.fill.colors
 
-    this.axios.get('data/data20201224.json').then((response) => {
+    this.axios.get(this.JSON_PATH).then((response) => {
       this.arrObjDetailed = response.data
 
       Object.keys(this.arrObjDetailed).forEach((k) => {
