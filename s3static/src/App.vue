@@ -24,9 +24,9 @@
         <b-card-group deck>
           <b-card title="更新情報">
             <b-card-sub-title class="mb-2">政府情報更新日</b-card-sub-title>
-            <b-card-text class="mx-3">2021/01/18</b-card-text>
+            <b-card-text class="mx-3">2021/01/29</b-card-text>
             <b-card-sub-title class="mb-2">サイト情報更新日</b-card-sub-title>
-            <b-card-text class="mx-3">2021/01/18</b-card-text>
+            <b-card-text class="mx-3">2021/02/01</b-card-text>
 
             <b-card-sub-title class="mb-2">目安箱投稿数</b-card-sub-title>
             <b-card-text class="mx-3">&gt;8000</b-card-text>
@@ -223,14 +223,14 @@
 <script>
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
-import rawdata from '@/assets/data20210118.json'
+import rawdata from '@/assets/data20210201.json'
 
 export default {
   name: 'App',
   components: {},
   data() {
     return {
-      JSON_PATH: 'data/data20210118.json',
+      JSON_PATH: 'data/data20210201.json',
       arrObj: rawdata,
       arrObjDetailed: {},
 
