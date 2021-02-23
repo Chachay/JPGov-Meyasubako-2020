@@ -16,6 +16,9 @@
             </a>
             を御覧ください。
           </p>
+          <p>
+            <a href="https://github.com/Chachay/JPGov-Meyasubako-2020">Chachay/JPGov-Meyasubako-2020</a>にてコードを公開しております。
+          </p>
         </div>
       </b-col>
     </b-row>
