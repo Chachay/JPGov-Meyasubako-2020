@@ -223,14 +223,14 @@
 <script>
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
-import rawdata from '@/assets/data20210201.json'
+import rawdata from '@/assets/data20210222.json'
 
 export default {
   name: 'App',
   components: {},
   data() {
     return {
-      JSON_PATH: 'data/data20210201.json',
+      JSON_PATH: 'data/data20210222.json',
       arrObj: rawdata,
       arrObjDetailed: {},
 
