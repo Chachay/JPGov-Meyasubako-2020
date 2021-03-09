@@ -17,7 +17,11 @@
             を御覧ください。
           </p>
           <p>
-            <a href="https://github.com/Chachay/JPGov-Meyasubako-2020">Chachay/JPGov-Meyasubako-2020</a>にてコードを公開しております。
+            Github:
+            <a href="https://github.com/Chachay/JPGov-Meyasubako-2020">
+              Chachay/JPGov-Meyasubako-2020
+            </a>
+            にてコードを公開しております。
           </p>
         </div>
       </b-col>
@@ -27,9 +31,9 @@
         <b-card-group deck>
           <b-card title="更新情報">
             <b-card-sub-title class="mb-2">政府情報更新日</b-card-sub-title>
-            <b-card-text class="mx-3">2021/01/29</b-card-text>
+            <b-card-text class="mx-3">2021/02/22</b-card-text>
             <b-card-sub-title class="mb-2">サイト情報更新日</b-card-sub-title>
-            <b-card-text class="mx-3">2021/02/01</b-card-text>
+            <b-card-text class="mx-3">2021/03/09</b-card-text>
 
             <b-card-sub-title class="mb-2">目安箱投稿数</b-card-sub-title>
             <b-card-text class="mx-3">&gt;8000</b-card-text>
