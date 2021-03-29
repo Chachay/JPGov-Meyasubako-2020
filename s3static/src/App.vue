@@ -9,7 +9,7 @@
             <a href="https://www.gyoukaku.go.jp/hotline/index.html">
               政府の行政改革
             </a>
-            で公開されているエクセル情報を加工したものです。 公式の情報は
+            で公開されているエクセル情報を加工したものです。 
             公式の情報は
             <a href="https://www.gyoukaku.go.jp/index.html">
               内閣官房行政改革推進本部事務局のウェブページ
