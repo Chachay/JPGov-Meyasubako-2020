@@ -111,3 +111,4 @@ rawdata
 
 # Ignore local action directory
 act
+*.json
