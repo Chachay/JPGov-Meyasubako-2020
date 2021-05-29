@@ -113,6 +113,7 @@
       v-model="currentPage"
       :total-rows="rows"
       :per-page="perPage"
+      :limit="navSize"
       aria-controls="ProjTable"
     ></b-pagination>
     <b-table
@@ -221,6 +222,13 @@
         >
       </template>
     </b-table>
+    <b-pagination
+      v-model="currentPage"
+      :total-rows="rows"
+      :per-page="perPage"
+      :limit="navSize"
+      aria-controls="ProjTable"
+    ></b-pagination>
     <b-row class="mt-4">
       <b-col>
         <p>
@@ -249,6 +257,7 @@ export default {
       arrObjDetailed: {},
       perPage: 100,
       currentPage: 1,
+      navSize: 10,
 
       tableFields: [
         { key: '通番', label: '番号', sortable: true, width: '2em' },
