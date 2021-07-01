@@ -30,9 +30,9 @@
         <b-card-group deck>
           <b-card title="更新情報">
             <b-card-sub-title class="mb-2">政府情報更新日</b-card-sub-title>
-            <b-card-text class="mx-3">2021/05/24</b-card-text>
+            <b-card-text class="mx-3">2021/06/16</b-card-text>
             <b-card-sub-title class="mb-2">サイト情報更新日</b-card-sub-title>
-            <b-card-text class="mx-3">2021/05/27</b-card-text>
+            <b-card-text class="mx-3">2021/07/01</b-card-text>
 
             <b-card-sub-title class="mb-2">目安箱投稿数</b-card-sub-title>
             <b-card-text class="mx-3">&gt;8000</b-card-text>
