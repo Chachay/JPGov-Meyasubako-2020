@@ -111,7 +111,7 @@
     </b-row>
     <b-pagination
       v-model="currentPage"
-      :total-rows="rows"
+      :total-rows="totalRows"
       :per-page="perPage"
       :limit="navSize"
       aria-controls="ProjTable"
@@ -130,6 +130,7 @@
       :fields="tableFields"
       :per-page="perPage"
       :current-page="currentPage"
+      @filtered="onFiltered"
     >
       <template #table-colgroup="scope">
         <col
@@ -224,7 +225,7 @@
     </b-table>
     <b-pagination
       v-model="currentPage"
-      :total-rows="rows"
+      :total-rows="totalRows"
       :per-page="perPage"
       :limit="navSize"
       aria-controls="ProjTable"
@@ -257,6 +258,7 @@ export default {
       arrObjDetailed: {},
       perPage: 100,
       currentPage: 1,
+      totalRows: 1,
       navSize: 10,
 
       tableFields: [
@@ -520,6 +522,9 @@ export default {
     this.chart02.xaxis.categories.sort()
     this.chart02.xaxis.categories = this.chart02.xaxis.categories.slice(0, -1)
   },
+  mounted() {
+    this.totalRows = this.arrObj.length
+  },
   methods: {
     convertDate(unixTime) {
       if (unixTime !== null) {
@@ -527,6 +532,11 @@ export default {
       } else {
         return '未対応'
       }
+    },
+    onFiltered(filteredItems) {
+      // Trigger pagination to update the number of buttons/pages due to filtering
+      this.totalRows = filteredItems.length
+      this.currentPage = 1
     },
   },
 }
