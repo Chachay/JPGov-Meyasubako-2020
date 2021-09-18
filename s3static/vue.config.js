@@ -18,7 +18,7 @@ module.exports = {
       gzip: true,
       enableCloudfront: true,
       cloudfrontId: '',
-      cloudfrontMatchers: '/index.html,/data/*.json',
+      cloudfrontMatchers: '/index.html,/data/*.json,/js/*.js',
       pluginVersion: '4.0.0-rc3',
       uploadConcurrency: 5,
     },
