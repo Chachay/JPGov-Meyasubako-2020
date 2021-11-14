@@ -32,7 +32,7 @@
             <b-card-sub-title class="mb-2">政府情報更新日</b-card-sub-title>
             <b-card-text class="mx-3">2021/11/10</b-card-text>
             <b-card-sub-title class="mb-2">サイト情報更新日</b-card-sub-title>
-            <b-card-text class="mx-3">2021/11/11</b-card-text>
+            <b-card-text class="mx-3">2021/11/15</b-card-text>
 
             <b-card-sub-title class="mb-2">目安箱投稿数</b-card-sub-title>
             <b-card-text class="mx-3">&gt;8000</b-card-text>
