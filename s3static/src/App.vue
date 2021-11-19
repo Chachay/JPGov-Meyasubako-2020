@@ -264,8 +264,18 @@ export default {
       tableFields: [
         { key: '通番', label: '番号', sortable: true, width: '2em' },
         { key: '区分', sortable: true, width: '2em' },
-        { key: '所管省庁への検討要請日', sortable: true, width: '2.5em' },
-        { key: '回答取りまとめ日', sortable: true, width: '2.5em' },
+        {
+          key: '所管省庁への検討要請日',
+          label: '検討要請日',
+          sortable: true,
+          width: '2.5em',
+        },
+        {
+          key: '回答取りまとめ日',
+          label: '回答日',
+          sortable: true,
+          width: '2.5em',
+        },
         { key: '提案主体', sortable: true, width: '3em' },
         { key: '提案事項', sortable: true, width: '8em' },
         { key: '所管省庁', sortable: true, width: '3em' },
@@ -503,8 +513,8 @@ export default {
 
     this.timeseries = this.arrObj.reduce(
       (a, c) => {
-        const label0 = c['所管省庁への検討要請日']
-        const label1 = c['回答取りまとめ日']
+        const label0 = c['所管省庁への検討要請日'].substr(0, 4 + 1 + 2)
+        const label1 = c['回答取りまとめ日'].substr(0, 4 + 1 + 2)
         a['要請日'][label0] = 1 + (a['要請日'][label0] || 0)
         a['回答日'][label1] = 1 + (a['回答日'][label1] || 0)
 
