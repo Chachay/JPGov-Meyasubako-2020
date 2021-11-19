@@ -476,6 +476,7 @@ export default {
 
     this.stat = this.arrObj.reduce(
       (a, c) => {
+        console.log(a, c)
         a['未回答数'] += c['所管省庁の検討結果_対応の分類'] === null ? 1 : 0
         const m = c['所管省庁'].trim().split('\n')
         m.forEach((e) => {
