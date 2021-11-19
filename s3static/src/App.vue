@@ -286,7 +286,7 @@ export default {
       stat: {},
       timeseries: {},
       filter: null,
-      filterOn: ['提案主体', '所管省庁', '提案事項', 'タグ'],
+      filterOn: ['通番', '提案主体', '所管省庁', '提案事項', 'タグ'],
 
       sparkline0: {
         chart: {
