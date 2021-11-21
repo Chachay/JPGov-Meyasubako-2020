@@ -85,7 +85,7 @@
     <b-row>
       <b-col lg="7" class="my-1">
         <b-form-group
-          label="検索(提案主体, 提案事項, 所管省庁, タグ)"
+          label="検索(番号, 提案主体, 提案事項, 所管省庁, タグ)"
           label-cols-sm="4"
           label-align-sm="right"
           label-size="sm"
@@ -108,6 +108,11 @@
           </b-input-group>
         </b-form-group>
       </b-col>
+      <b-col lg="3" class="my-2">
+        <b-form-checkbox v-model="NoAnswer" @change="toggleAnswer">
+          <p>未対応を非表示</p>
+        </b-form-checkbox>
+      </b-col>
     </b-row>
     <b-pagination
       v-model="currentPage"
@@ -126,7 +131,7 @@
       stacked="md"
       :filter="filter"
       :filter-included-fields="filterOn"
-      :items="arrObj"
+      :items="arrTable"
       :fields="tableFields"
       :per-page="perPage"
       :current-page="currentPage"
@@ -256,6 +261,7 @@ export default {
       JSON_PATH: 'data/data_processed.json',
       arrObj: rawdata,
       arrObjDetailed: {},
+      arrTable: [],
       perPage: 100,
       currentPage: 1,
       totalRows: 1,
@@ -531,9 +537,10 @@ export default {
     ]
     this.chart02.xaxis.categories.sort()
     this.chart02.xaxis.categories = this.chart02.xaxis.categories.slice(0, -1)
+    this.arrTable = this.arrObj
   },
   mounted() {
-    this.totalRows = this.arrObj.length
+    this.totalRows = this.arrTable.length
   },
   methods: {
     convertDate(unixTime) {
@@ -542,6 +549,16 @@ export default {
       } else {
         return '未対応'
       }
+    },
+    toggleAnswer(checked) {
+      if (checked) {
+        this.arrTable = this.arrObj.filter(
+          (e) => e['回答取りまとめ日'] !== '未対応'
+        )
+      } else {
+        this.arrTable = this.arrObj
+      }
+      this.totalRows = this.arrTable.length
     },
     onFiltered(filteredItems) {
       // Trigger pagination to update the number of buttons/pages due to filtering
