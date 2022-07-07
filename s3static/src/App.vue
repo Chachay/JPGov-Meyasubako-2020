@@ -30,9 +30,9 @@
         <b-card-group deck>
           <b-card title="更新情報">
             <b-card-sub-title class="mb-2">政府情報更新日</b-card-sub-title>
-            <b-card-text class="mx-3">2022/05/31</b-card-text>
+            <b-card-text class="mx-3">2022/07/05</b-card-text>
             <b-card-sub-title class="mb-2">サイト情報更新日</b-card-sub-title>
-            <b-card-text class="mx-3">2022/06/05</b-card-text>
+            <b-card-text class="mx-3">2022/07/07</b-card-text>
 
             <b-row>
               <b-col cols="4">
