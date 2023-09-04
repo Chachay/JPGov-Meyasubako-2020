@@ -30,7 +30,7 @@
         <b-card-group deck>
           <b-card title="更新情報">
             <b-card-sub-title class="mb-2">サイト情報更新日</b-card-sub-title>
-            <b-card-text class="mx-3">2023/6/26</b-card-text>
+            <b-card-text class="mx-3">2023/9/4</b-card-text>
 
             <b-row>
               <b-col cols="4">
